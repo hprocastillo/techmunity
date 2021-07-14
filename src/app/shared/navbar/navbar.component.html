@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
+	<div class="container">
+
+		<a class="navbar-brand" routerLink="/home">
+			<strong>Techmunity</strong>
+		</a>
+
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+			<form class="d-flex" style="width: 500px">
+				<input class="form-control me-2" type="search"
+					   placeholder="Busca repositorios, cursos, ayudas y más." aria-label="Search">
+				<button class="btn btn-outline-light" type="submit">Buscar</button>
+			</form>
+			<ul class="navbar-nav" *ngIf="user$ | async as user">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+					   data-bs-toggle="dropdown"
+					   aria-expanded="false">
+
+						<ng-container *ngIf="user.photoURL === null; else showPhotoUrl">
+							<img src="../../../assets/images/profile/user.svg" alt="" class="img-navbar">
+						</ng-container>
+
+						<ng-template #showPhotoUrl>
+							<img src="{{ user.photoURL}}" alt="" class="img-navbar">
+						</ng-template>
+
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="#">Ver perfil</a></li>
+						<li><a class="dropdown-item" href="#">Configuración y privacidad</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" (click)="logout()">Cerrar sesión</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

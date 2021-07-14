@@ -1,0 +1,31 @@
+.wrapper {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.title-section {
+  color: #13928c;
+  font-size: 14px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+.skill{
+  font-size: 12px;
+}
+.go-ranking {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.go-ranking > a {
+  color: #13928c;
+  text-decoration: none;
+}

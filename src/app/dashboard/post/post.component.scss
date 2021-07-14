@@ -1,0 +1,93 @@
+.wrapper {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/*** Header ***/
+.img-avatar {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0 0 0 15px;
+}
+
+.status, .timestamp {
+  color: gray;
+  font-size: 11px;
+  padding: 0;
+  margin: 0 0 0 15px;
+}
+
+/**** BODY ****/
+.post-content {
+  font-size: 14px;
+}
+
+/**** COUNTERS ****/
+.text-counters {
+  text-decoration: none;
+  font-size: 11px;
+  color: gray;
+}
+
+.text-counters:hover {
+  text-decoration: underline;
+}
+
+/**** TOOLS ****/
+.img-tool {
+  width: 12px;
+}
+
+.text-tool {
+  display: inline;
+  font-size: 12px;
+  color: #666666;
+  text-decoration: none;
+}
+
+/**** COMMENT FORM *****/
+.img-avatar-form {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.input-comment {
+  border-radius: 20px;
+}
+
+
+/**** LIST COMMENTS ****/
+.list-comments {
+  list-style-type: none;
+  padding: 0;
+}
+
+/**** COMMENT BODY ****/
+.wrapper-comment {
+  background-color: #ebf0f1;
+  border-radius: 10px;
+}
+
+.avatar-comment {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.user-comment {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.content-comment {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}

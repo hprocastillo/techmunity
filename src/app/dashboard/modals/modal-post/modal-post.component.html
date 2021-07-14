@@ -1,0 +1,61 @@
+<form (ngSubmit)="onSave(user.uid, user.displayName, user.photoURL)" [formGroup]="postForm">
+    <div class="modal fade" id="modalPOST" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear una publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="{{ user.photoURL }}" alt="" class="img-avatar">
+                        </div>
+                        <div class="col-7 pt-1">
+                            <h6>{{ user.displayName }}</h6>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <select class="form-select form-select-sm visibility" formControlName="visibility">
+                                    <option value="">Cualquiera</option>
+                                    <option value="">Solo contactos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea class="form-control contentBox" placeholder="¿Sobre qué quieres hablar?"
+                                          formControlName="content"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-tool" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Añadir una foto">
+                        <img src="../../../../assets/images/post/image.svg" alt="" class="img-tool">
+                    </button>
+                    <button type="button" class="btn btn-tool" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Añadir un video">
+                        <img src="../../../../assets/images/post/video.svg" alt="" class="img-tool">
+                    </button>
+                    <button type="button" class="btn btn-tool" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Añadir un documento">
+                        <img src="../../../../assets/images/post/document.svg" alt="" class="img-tool">
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-form" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-form">
+                        Publicar
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

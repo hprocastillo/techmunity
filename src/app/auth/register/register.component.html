@@ -1,0 +1,57 @@
+<div class="container p-4">
+	<div class="row">
+		<div class="col-4">
+		</div>
+		<div class="col-4">
+			<br>
+			<h3 class="text-center">
+				<a routerLink="/home" class="logo-link">
+					Techmunity
+				</a>
+			</h3>
+			<br>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title text-center">
+						Crea tu cuenta
+					</h5>
+					<br>
+					<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+						<div class="form-group form-floating mb-3">
+							<input type="email" class="form-control" id="floatingInput" placeholder="usuario@gmail.com"
+								   formControlName="email">
+							<label for="floatingInput">Email</label>
+						</div>
+						<div class="form-group form-floating">
+							<input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"
+								   formControlName="password">
+							<label for="floatingPassword">Contraseña</label>
+						</div>
+						<div>
+							<p class="text-help">
+								<small>Al registrarse, confirma que ha leído y aceptado nuestras Condiciones del
+									Servicio y nuestra
+									Política de Privacidad.</small>
+							</p>
+						</div>
+						<div class="d-grid">
+							<button type="submit" class="btn btn-login">Registrarse</button>
+							<p class="text-center">ó</p>
+							<button type="button" class="btn btn-social" (click)="onGoogleLogin()">
+								<img class="img-btn-social" src="../../../assets/images/social/google.svg" alt="">
+								&nbsp;Continuar con Google
+							</button>
+							<button type="button" class="btn btn-social">
+								<img class="img-btn-social" src="../../../assets/images/social/facebook.svg" alt="">
+								&nbsp;Continuar con Facebook
+							</button>
+						</div>
+					</form>
+					<br>
+					<a class="link-login" routerLink="/login">¿Ya tiene una cuenta? Inicie sesión</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</div>

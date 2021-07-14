@@ -1,0 +1,15 @@
+.container-fluid{
+    background-color: rgb(214, 212, 212);
+}
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+li {
+    float: left;
+    margin-right: 20px;
+}
+li > a {
+    text-decoration: none;
+    color: #000;
+}

@@ -1,0 +1,26 @@
+.wrapper {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.username {
+  margin-bottom: 0;
+}
+.status{
+  font-size: 12px;
+}
+.img-avatar {
+  width: 60px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.go-profile {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.go-profile > a {
+  color: #13928c;
+  text-decoration: none;
+}

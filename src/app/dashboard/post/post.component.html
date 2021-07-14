@@ -1,0 +1,148 @@
+<div class="wrapper p-3">
+
+	<!-- HEADER -->
+	<div class="row pb-2">
+
+		<!-- AVATAR IMAGE -->
+		<div class="col-1">
+			<ng-container *ngIf="post.userPhotoURL === null; else showPhotoUrl">
+				<img src="../../../assets/images/profile/user.svg" alt="{{ post.userDisplayName }}" class="img-avatar">
+			</ng-container>
+			<ng-template #showPhotoUrl>
+				<img src="{{ post.userPhotoURL }}" alt="{{ post.userDisplayName }}" class="img-avatar">
+			</ng-template>
+		</div>
+
+		<!-- NAME USER, STATUS AND TIMESTAMP -->
+		<div class="col-11">
+			<p class="name">{{ post.userDisplayName }}</p>
+			<p class="status">Cargo</p>
+			<p class="timestamp">{{ post.createdAt.toDate() | dateAgo }}</p>
+		</div>
+	</div>
+
+	<!-- BODY -->
+	<div class="row">
+		<div class="col-12">
+			<ng-template [ngIf]="post.content !== ''">
+				<p class="post-content">{{ post.content }}</p>
+			</ng-template>
+			<!-- <ng-template [ngIf]="linkVideo !== ''">
+				<youtube-player
+						videoId="{{ linkVideo }}"
+						suggestedQuality="highres"
+						[height]="250"
+						[width]="450"
+						[startSeconds]="43"
+						[endSeconds]="60">
+				</youtube-player>
+			</ng-template> -->
+		</div>
+	</div>
+
+	<!-- COMMENTS, LIKES AND SHARED COUNTERS -->
+	<div class="row">
+		<!-- LIKES -->
+		<div class="col-2">
+			<ng-container *ngIf="numberLikes === 1">
+				<a type="button" class="text-counters" (click)="showListLikes()">{{ numberLikes }} like</a>
+			</ng-container>
+			<ng-container *ngIf="numberLikes > 1">
+				<a type="button" class="text-counters" (click)="showListLikes()">{{ numberLikes }} likes</a>
+			</ng-container>
+		</div>
+		<!-- COMMENTS -->
+		<div class="col-3">
+			<ng-container *ngIf="numberComments === 1">
+				<a type="button" class="text-counters" (click)="showListComments()">{{ numberComments }} comentario</a>
+			</ng-container>
+			<ng-container *ngIf="numberComments > 1">
+				<a type="button" class="text-counters" (click)="showListComments()">{{ numberComments }} comentarios</a>
+			</ng-container>
+		</div>
+		<!-- SHARED -->
+		<div class="col-1">
+		</div>
+	</div>
+
+	<!-- TOOLS -->
+	<hr>
+	<div class="row">
+		<div class="col-3 text-center">
+			<a class="text-tool" routerLink="#" (click)="onLike(post.id, user.uid, user.displayName, user.photoURL)">
+				<img src="../../../assets/images/post/like.svg" alt="" class="img-tool">
+				Apoyar
+			</a>
+		</div>
+		<div class="col-3 text-center">
+			<a class="text-tool" routerLink="#" (click)="showCommentsForm()">
+				<img src="../../../assets/images/post/comment.svg" alt="" class="img-tool">
+				Comentar
+			</a>
+		</div>
+		<div class="col-3 text-center">
+			<a class="text-tool" routerLink="#">
+				<img src="../../../assets/images/post/share.svg" alt="" class="img-tool">
+				Compartir
+			</a>
+		</div>
+	</div>
+
+	<!-- COMMENTS FORM -->
+	<ng-container *ngIf="commentActive === false; else showCommentsTemplate">
+	</ng-container>
+
+	<ng-template #showCommentsTemplate>
+		<div class="row pt-4">
+			<div class="col-1">
+				<ng-container *ngIf="user.photoURL === null; else showPhotoUrl">
+					<img src="../../../assets/images/profile/user.svg" alt="{{ user.displayName }}"
+						 class="img-avatar-form">
+				</ng-container>
+				<ng-template #showPhotoUrl>
+					<img src="{{ user.photoURL }}" alt="{{ user.displayName }}" class="img-avatar-form">
+				</ng-template>
+			</div>
+			<div class="col-11">
+				<form (ngSubmit)="onComment(post.id, user.uid, user.displayName, user.photoURL)"
+					  [formGroup]="commentForm">
+					<input type="text" class="form-control form-control-sm input-comment" formControlName="content"
+						   placeholder="Añadir un comentario">
+				</form>
+			</div>
+		</div>
+	</ng-template>
+
+	<!-- LIST COMMENTS -->
+	<ng-container *ngIf="listCommentsActive === false; else showListCommentsTemplate">
+	</ng-container>
+
+	<ng-template #showListCommentsTemplate>
+		<ul class="list-comments">
+			<li *ngFor="let comment of comments">
+				<div class="row pt-3">
+					<!-- HEADER COMMENT -->
+					<div class="col-1">
+						<ng-container *ngIf="comment.userPhotoURL === null; else showCommentPhotoUrl">
+							<img src="../../../assets/images/profile/user.svg" alt="{{ comment.userDisplayName }}"
+								 class="avatar-comment">
+						</ng-container>
+						<ng-template #showCommentPhotoUrl>
+							<img src="{{ comment.userPhotoURL }}" alt="{{ comment.userDisplayName }}"
+								 class="avatar-comment">
+						</ng-template>
+					</div>
+
+					<!-- BODY COMMENT -->
+					<div class="col-11">
+						<div class="wrapper-comment p-2">
+							<p class="user-comment">{{ comment.userDisplayName }}</p>
+							<p class="content-comment">{{ comment.content }}</p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</ng-template>
+
+</div>

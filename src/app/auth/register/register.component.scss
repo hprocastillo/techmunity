@@ -1,0 +1,54 @@
+.logo-link {
+  color: #13928c;
+  text-decoration: none;
+}
+.logo-link > img{
+  margin-top: -5px;
+}
+.card {
+  box-shadow: 1px 1px 5px #999;
+  text-align: center;
+}
+
+.btn-login {
+  color: #fff;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #13928c;
+  border: 1px solid #13928c;
+  margin: 10px 0 10px 0;
+}
+
+.btn-login:hover {
+  background-color: #0a5c58;
+}
+
+.btn-social {
+  color: #666;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #999;
+  margin: 5px 0 5px 0;
+}
+
+.btn-social:hover {
+  background-color: #e5e4e4;
+}
+
+.img-btn-social {
+  margin-top: -5px;
+  width: 16px;
+}
+
+.text-help {
+  color: gray;
+  font-size: 12px;
+  text-align: justify;
+  margin-bottom: 5px;
+}
+
+.link-login {
+  font-size: 14px;
+  text-decoration: none;
+}

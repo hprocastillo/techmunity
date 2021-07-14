@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" *ngIf="user$ | async as user">
+
+	<div class="container">
+		<div class="row">
+
+			<!-- PROFILE & RANKING COMPONENT -->
+			<div class="col-3 p-2 bg-section">
+				<ng-container *ngIf="user.displayName === null; else showDisplayName">
+					<app-profile [userNameDefault]="userNameDefault"></app-profile>
+				</ng-container>
+				<ng-template #showDisplayName>
+					<app-profile [user]="user"></app-profile>
+				</ng-template>
+				<app-ranking></app-ranking>
+			</div>
+
+			<!-- TOOLS & POST WALL'S COMPONENT -->
+			<div class="col-6 p-2 bg-section">
+				<app-tools [user]="user"></app-tools>
+				<app-wall [user]="user"></app-wall>
+			</div>
+
+			<!-- ADVERTISING & MARKETING -->
+			<div class="col-3 p-2">
+				<app-advertising></app-advertising>
+			</div>
+
+		</div>
+	</div>
+</div>

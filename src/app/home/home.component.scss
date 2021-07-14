@@ -1,0 +1,49 @@
+.btn-register {
+    border-radius: 20px;
+    padding: 8px 20px 8px 20px;
+}
+.btn-login {
+    border: 1px solid #13928c;
+    color: #13928c;
+    border-radius: 20px;
+    padding: 8px 20px 8px 20px;
+}
+.btn-login:hover {
+    border: 1px solid #13928c;
+    background-color: #13928c;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 20px 8px 20px;
+}
+.btn-category {
+    background-color: rgb(200, 200, 200);
+    color: #666;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 8px 20px 8px 20px;
+    margin: 5px 5px auto;
+}
+.btn-category:hover {
+    text-decoration: underline;
+    border: 1px solid #666;
+    background-color: #666;
+    color: rgb(200, 200, 200);
+    border-radius: 20px;
+    padding: 8px 20px 8px 20px;
+}
+.logo,
+.intro {
+    color: #13928c;
+}
+.logo > img{
+  margin-top: -5px;
+}
+.section2 {
+    background-color: rgb(243, 243, 243);
+}
+.section3 {
+    background-color: #00b5c6;
+}
+.section-text {
+    color: #fff;
+}

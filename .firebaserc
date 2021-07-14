@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "techmunity-4583c"
+  },
+  "targets": {
+    "techmunity-4583c": {
+      "hosting": {
+        "techmunity": [
+          "techmunity-4583c"
+        ]
+      }
+    }
+  }
+}
